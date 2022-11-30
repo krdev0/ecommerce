@@ -34,8 +34,7 @@
             </div>
 
             <div class="mb-5 lg:mb-8">
-                <input class="checkbox" type="checkbox" id="check-newsletter">
-                <label for="check-newsletter" class="text-sm ml-2">Send me updates about newest products</label>
+                <router-link :to="{name: 'resetPassword'}" class="no-underline font-medium text-sm text-indigo-600 hover:text-indigo:500">Forgot your password?</router-link>
             </div>
 
             <div class="mb-3 lg:mb-5">
