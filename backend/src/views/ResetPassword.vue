@@ -14,7 +14,6 @@
             <div class="mb-3 lg:mb-5">
                 <button class="btn btn--primary text-[1em] w-full">Submit</button>
             </div>
-
         </form>
     </GuestLayout>
 </template>
