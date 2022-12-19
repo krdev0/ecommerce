@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cart_items', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('countries', function (Blueprint $table) {
+            $table->string('code', 3)->primary();
+            $table->string('name', 255);
+            $table->jsonb('states')->nullable();
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cart_items');
+        Schema::dropIfExists('countries');
     }
 };
