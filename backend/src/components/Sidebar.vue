@@ -10,7 +10,7 @@
                 Dashboard
             </span>
             </router-link>
-            <router-link :to="{name: 'app.dashboard'}"
+            <router-link :to="{name: 'app.products'}"
                          class="flex items-center transition-all hover:bg-black/30 py-2 px-3 rounded">
             <span class="mr-2">
                 <ListBulletIcon class="w-5"/>

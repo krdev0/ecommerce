@@ -5,7 +5,6 @@
         <div class="flex-1">
             <AppHeader/>
             <main>
-                Main Content
                 <router-view></router-view>
             </main>
         </div>
@@ -16,6 +15,7 @@
 
 import Sidebar from "./Sidebar.vue";
 import AppHeader from "./AppHeader.vue";
+
 </script>
 
 <style scoped>
