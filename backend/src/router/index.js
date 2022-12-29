@@ -4,8 +4,8 @@ import Products from "../views/Products.vue";
 import Login from "../views/Login.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
 import AppLayout from "../components/AppLayout.vue";
-// import store from "../store"
-// 3:04 - handle unauth users
+import store from "../store"
+
 const routes = [
     {
         path: '/app',
@@ -31,12 +31,23 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: Login
+        component: Login,
+        meta: {
+            requireGuest:true
+        }
     },
     {
         path: '/forgot',
         name: 'forgotPassword',
-        component: ForgotPassword
+        component: ForgotPassword,
+        meta: {
+            requireGuest:true
+        }
+    },
+    {
+        path: '/:pathMatch(.*)',
+        name: 'notfound',
+        component: NotFound,
     }
 ];
 
@@ -48,6 +59,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     if(to.meta.requiresAuth && !store.state.user.token) {
         next({name: 'login'})
+    } else if (to.meta.requireGuest && store.state.user.token) {
+        next({name: 'app.dashboard'})
     } else {
         next()
     }
